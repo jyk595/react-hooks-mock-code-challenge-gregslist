@@ -1,9 +1,9 @@
 import React from "react";
 import ListingCard from "./ListingCard";
 
-function ListingsContainer({ listingsData }) {
+function ListingsContainer({ listingsData, deleteListing }) {
   const renderListings = listingsData.map((individualListing)=>{
-    return <ListingCard individualListing={individualListing} key={individualListing.id} />
+    return <ListingCard individualListing={individualListing} deleteListing={deleteListing} key={individualListing.id} />
   })
   
   return (

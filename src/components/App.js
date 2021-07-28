@@ -16,10 +16,15 @@ function App() {
     .then(setListingsData);
   },[])
 
+  function deleteListing(id){
+    const updatedListings = listingsData.filter(listing => listing.id !== id)
+    setListingsData(updatedListings)
+  }
+
   return (
     <div className="app">
       <Header />
-      <ListingsContainer listingsData={listingsData} />
+      <ListingsContainer listingsData={listingsData} deleteListing={deleteListing}/>
     </div>
   );
 }
